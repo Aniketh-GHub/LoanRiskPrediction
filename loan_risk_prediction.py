@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -35,3 +36,11 @@ report = classification_report(y_test, y_pred)
 
 print(f'Accuracy: {accuracy}')
 print(report)
+
+# Plot a histogram of the 'LoanAmount' column
+plt.figure(figsize=(8, 6))
+plt.hist(data['LoanAmount'], bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Loan Amount')
+plt.ylabel('Frequency')
+plt.title('Histogram of Loan Amounts')
+plt.show()
